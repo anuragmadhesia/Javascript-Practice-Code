@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>5 August | String Uppercase</title>
+        <script>
+            function check()
+            {
+                var t1,lname;
+                var txt=document.getElementById("txt1").value;
+                first=txt[0].toUpperCase();
+                for(i=1;i<=txt.length-1;i++)
+                {
+                    lname=txt[i-1];
+                    if(lname==' ')
+                    {
+                        t1=txt[i].toUpperCase();
+                    }
+                    else
+                    {
+                        t1=txt[i];
+                    }
+                    first=first+t1;
+                }
+                document.getElementById("txt1").value=first;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="txt1" onkeyup="check()">
+    </body>
+</html>

@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/font-awesome.min.css" rel="stylesheet"/>
+        <script>
+            function disable(){
+                document.getElementById("close").style.display="none";
+            }
+            function show(){
+                var op=document.getElementById("txtpass").type;
+                if(op=="password"){
+                    document.getElementById("txtpass").type="text";
+                    document.getElementById("close").style.display="block";
+                    document.getElementById("open").style.display="none";
+                }
+                if(op=="text"){
+                    document.getElementById("txtpass").type="password";
+                    document.getElementById("close").style.display="none";
+                    document.getElementById("open").style.display="block";
+                }
+            }
+            function passvalid(){
+                var pass=document.getElementById("txtpass").value;
+                len=pass.length;
+                if(len=="" || len==null)
+                {
+                    document.getElementById("sppass").innerHTML="Please Enter Password";
+                    document.getElementById("sppass").style.color="blue";
+                }
+                else if(len<=4)
+                {
+                    document.getElementById("sppass").innerHTML="Password Too Short";
+                    document.getElementById("sppass").style.color="red";
+                }
+                else if(len>=5 && len<=8)
+                {
+                    document.getElementById("sppass").innerHTML="Password Too Medium";
+                    document.getElementById("sppass").style.color="orange";
+                }
+                else
+                {
+                    document.getElementById("sppass").innerHTML="Strong Password";
+                    document.getElementById("sppass").style.color="green";
+                }
+            }
+            function mobvalid(){
+                var mob=document.getElementById("txtmob").value;
+                if((mob[0]==9||mob[0]==8||mob[0]==6)&& mob.length==10)
+                {
+                    document.getElementById("sp").innerText="Valid Number";
+                    document.getElementById("sp").style.color="green";
+                }
+                else
+                {
+                    document.getElementById("sp").innerText="Invalid Number";
+                    document.getElementById("sp").style.color="red";
+                }
+            }
+            function mailvalid(){
+                var text=document.getElementById("txtmail").value;
+                var regx=/^([a-z 0-9\.-]+)@([a-z 0-9-/]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+                if(regx.test(text)){
+                    document.getElementById("epass").innerText="Valid Email";
+                    document.getElementById("epass").style.color="green";
+                }
+                else{
+                    document.getElementById("epass").innerText="Invalid Email";
+                    document.getElementById("epass").style.color="red";
+                }
+            }
+            function checkNum(a){
+                var txt=a.which || a.keycode;
+                if(txt>=48 && txt<=57)
+                return true;
+                else
+                return false;
+            }
+            function checkChar(b){
+                var txt=b.which || b.keycode;
+                if((txt>=65 && txt<=90) || (txt>=97 && txt<=122) || txt==32)
+                return true;
+                else
+                return false;
+            }
+        </script>
+    </head>
+    <body onload="disable()">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="margin-top: 4%;">
+                <h2 class="text-center text-success">Javascript Validation</h2>
+                <hr style="border: 1px solid black;">
+                Name Validation  (Only Character and Space are entered)
+                <div class="input-group">
+                    <input type="text" placeholder="Enter Name" class="form-control" onkeypress="return checkChar(event)"/>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <i class="glyphicon glyphicon-user" style="font-size: 20px;"></i>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                Password Validation &nbsp;&nbsp;&nbsp;&nbsp;<span id="sppass"></span>
+                <div class="input-group" style="margin-top: 1.5%;">
+                    <input type="password" id="txtpass" placeholder="Enter Password" class="form-control" onkeyup="passvalid()"/>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="passswd" onclick="show()">
+                            <i class="glyphicon glyphicon-eye-open" style="font-size: 20px;" id="open"></i>
+                            <i class="glyphicon glyphicon-eye-close" style="font-size: 20px;" id="close"></i>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                Mobile No. Validation &nbsp;&nbsp;&nbsp;&nbsp;<span id="sp"></span>
+                <div class="input-group" style="margin-top: 1.5%;">
+                    <input type="text" id="txtmob" maxlength="10" placeholder="Enter Number" class="form-control" onkeypress="return checkNum(event)"/>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" onclick="mobvalid()">
+                            <i class="fa fa-phone" style="font-size: 20px;"></i>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                Email Validation &nbsp;&nbsp;&nbsp;&nbsp;<span id="epass"></span>
+                <div class="input-group" style="margin-top: 1.5%;">
+                    <input type="text" id="txtmail" placeholder="Enter Email" class="form-control"/>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="button" onclick="mailvalid()">
+                            <i class="glyphicon glyphicon-envelope" style="font-size: 20px;"></i>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <input type="button" class="btn btn-success" value="Submit" onclick="mobvalid();mailvalid()"/>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </body>
+</html>

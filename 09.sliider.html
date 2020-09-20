@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>4 August | Slider</title>
+        <script>
+            var picno=0;
+            var arr=["img1.jpg","img2.jpg","img3.jpg"];
+            function slide(){
+                pic=document.getElementById("im");
+                pic.src="img/"+arr[picno];
+                picno++;
+                if(picno==arr.length)
+                {
+                    picno=0;
+                }
+                window.setTimeout("slide()",1000);
+            }
+        </script>
+    </head>
+    <body onload="slide()">
+        <img src="img/img1.jpg" style="height: 100%;width: 100%;" id="im">
+    </body>
+</html>

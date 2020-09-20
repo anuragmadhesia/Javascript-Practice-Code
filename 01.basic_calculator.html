@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>7 July 2020</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="background: burlywood; margin-top: 4%;">
+                Enter first Number
+                <input type="text" class="form-control" id="txt1"/>
+                Enter Second Number
+                <input type="text" class="form-control" id="txt2"/>
+                Result
+                <input type="text" class="form-control" id="txt3"/>
+                <br>
+                <input type="button" class="Btn btn-success" value="+" onclick="add()">
+                <input type="button" class="Btn btn-info" value="-" onclick="subtract()">
+                <input type="button" class="Btn btn-danger" value="*" onclick="multiply()">
+                <input type="button" class="Btn btn-warning" value="/" onclick="divide()">
+                <input type="button" class="Btn btn-default" value="C" onclick="trash()">
+                <span id="sp"></span>
+            </div>
+            <script>
+                function add()
+                {
+                    var t1=Number(document.getElementById("txt1").value);
+                    var t2=Number(document.getElementById("txt2").value);
+                    var t3=document.getElementById("txt3");
+                    t3.value="Addition is "+(t1+t2);
+                    t3.style.color="red";
+                    t3.style.fontSize="20px";
+                    t3.style.border="1px solid red";
+                    document.getElementById("sp").innerText="Addition is "+(t1+t2);
+                    document.getElementById("sp").style.color="white";
+                }
+                function subtract()
+                {
+                    var t1=Number(document.getElementById("txt1").value);
+                    var t2=Number(document.getElementById("txt2").value);
+                    var t3=document.getElementById("txt3");
+                    t3.value="Subtration is "+(t1-t2);
+                    t3.style.color="blue";
+                    t3.style.fontSize="20px";
+                    t3.style.border="1px solid blue";
+                    document.getElementById("sp").innerText="Subtration is "+(t1-t2);
+                    document.getElementById("sp").style.color="white";
+                }
+                function multiply()
+                {
+                    var t1=Number(document.getElementById("txt1").value);
+                    var t2=Number(document.getElementById("txt2").value);
+                    var t3=document.getElementById("txt3");
+                    t3.value="Multiplication is "+(t1*t2);
+                    t3.style.color="green";
+                    t3.style.fontSize="20px";
+                    t3.style.border="1px solid green";
+                    document.getElementById("sp").innerText="Multiplication is "+(t1*t2);
+                    document.getElementById("sp").style.color="white";
+                }
+                function divide()
+                {
+                    var t1=Number(document.getElementById("txt1").value);
+                    var t2=Number(document.getElementById("txt2").value);
+                    var t3=document.getElementById("txt3");
+                    t3.value="Result is "+(t1/t2);
+                    t3.style.color="yellow";
+                    t3.style.fontSize="20px";
+                    t3.style.border="1px solid yellow";
+                    document.getElementById("sp").innerText="Result is "+(t1/t2);
+                    document.getElementById("sp").style.color="white";
+                }
+                function trash()
+                {
+                    document.getElementById("txt1").value="";
+                    document.getElementById("txt2").value="";
+                    document.getElementById("txt3").value="";
+                }
+            </script>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>1 august</title>
+        <script>
+            function mobvalid(){
+                var mob=document.getElementById("txtmob").value;
+                if((mob[0]==9||mob[0]==8||mob[0]==6)&& mob.length==10)
+                {
+                    document.getElementById("sp").innerText="Valid Number"
+                }
+                else
+                {
+                    document.getElementById("sp").innerText="Invalid Number"
+                }
+            }
+            function check(a){
+                var txt=a.which || a.keycode;
+                if(txt>=48 && txt<=57)
+                return true;
+                else
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        Enter Mobile Number
+        <input type="text" id="txtmob" maxlength="10" onkeypress="return check(event)"/>
+        <input type="button" value="valid" onclick="mobvalid()"/>
+        <br>
+        <span id="sp"></span>
+    </body>
+</html>

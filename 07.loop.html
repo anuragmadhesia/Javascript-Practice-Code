@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>4 August | for loop</title>
+    </head>
+    <body onload="exe()">
+        <script>
+            function exe(){
+                var op="";
+                for(i=1990;i<=2020;i++)
+                {
+                    op+="<option>"+i+"</option>";
+                }
+                document.getElementById("idAge").innerHTML=op;
+            }
+        </script>
+        Select Your Age:
+        <select id="idAge">
+
+        </select>
+    </body>
+</html>

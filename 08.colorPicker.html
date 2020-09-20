@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>4 August | Color Picker</title>
+        <script>
+            function arrex()
+            {
+                var op="";
+                var arr=["Red","Green","Blue","Teal"];
+                op="<option>Select color</option>";
+                for(i=0;i<arr.length;i++)
+                {
+                    op+="<option value="+arr[i]+">"+arr[i]+"</option>";
+                }
+                document.getElementById("picked").innerHTML=op;
+            }
+            function picker()
+            {
+                var ddl=document.getElementById("picked").value;
+                document.getElementById("dv").style.background=ddl;
+                document.getElementById("dv").style.transition="6s";
+            }
+        </script>
+    </head>
+    <body onload="arrex()">
+        Choose Your Color:
+        <select id="picked" onchange="picker()"></select>
+        <br>
+        <div id="dv" style="height: 300px;width: 300px;">
+        </div>
+    </body>
+</html>

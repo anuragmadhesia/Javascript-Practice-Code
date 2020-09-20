@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function check(){
+                var pic=document.getElementById("pic").value;
+                cut=pic.substr(pic.lastIndexOf(".")+1);
+                if(cut=="jpg" || cut=="png" || cut=="jpeg")
+                {
+                    alert("valid");
+                }
+                else
+                {
+                    alert("Invalid");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Picture:
+        <input type="file" id="pic">
+        <br>
+        <input type="button" value="ok" onclick="check()"/>
+    </body>
+</html>

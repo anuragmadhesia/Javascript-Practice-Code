@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>5 August | String</title>
+        <script>
+            function str()
+            {
+                var txt=document.getElementById("txt1").value;
+                document.getElementById("sp1").innerHTML="Length is :"+txt.length;
+                document.getElementById("sp2").innerHTML="Uppercase is :"+txt.toUpperCase();
+                document.getElementById("sp3").innerHTML="Lowercase is :"+txt.toLowerCase();
+                document.getElementById("sp4").innerHTML="Slice from(1,10) is :"+txt.slice(1,10);
+            }
+        </script>
+    </head>
+    <body>
+        Name :
+        <input type="text" id="txt1">
+        <input type="button" value="click" onclick="str()">
+        <br>
+        <h4 id="sp1"></h4>
+        <h4 id="sp2"></h4>
+        <h4 id="sp3"></h4>
+        <h4 id="sp4"></h4>
+    </body>
+</html>

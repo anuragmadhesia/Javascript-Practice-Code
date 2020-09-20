@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>CALCULATOR</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-2" style="background: burlywood; margin-top: 10%;">
+                    <input type="text" class="form-control" id="txt"/>
+                    <input type="button" class="Btn btn-success" value="1" onclick="one()">
+                    <input type="button" class="Btn btn-success" value="2" onclick="two()">
+                    <input type="button" class="Btn btn-success" value="3" onclick="three()">
+                    <input type="button" class="Btn btn-success" value="+" onclick="add()">
+                    <br>
+                    <input type="button" class="Btn btn-success" value="4" onclick="four()">
+                    <input type="button" class="Btn btn-success" value="5" onclick="five()">
+                    <input type="button" class="Btn btn-success" value="6" onclick="six()">
+                    <input type="button" class="Btn btn-success" value="-" onclick="subtract()">
+                    <br>
+                    <input type="button" class="Btn btn-success" value="7" onclick="seven()">
+                    <input type="button" class="Btn btn-success" value="8" onclick="eight()">
+                    <input type="button" class="Btn btn-success" value="9" onclick="nine()">
+                    <input type="button" class="Btn btn-success" value="*" onclick="multiply()">
+                    <br>
+                    <input type="button" class="Btn btn-success" value="C" onclick="trash()">
+                    <input type="button" class="Btn btn-success" value="0" onclick="zero()">
+                    <input type="button" class="Btn btn-success" value="=" onclick="doit()">
+                    <input type="button" class="Btn btn-success" value="/" onclick="divide()">
+
+                </div>
+                <script>
+                function one()
+                {
+                    Number(document.getElementById("txt").value+="1");
+                }
+                function two()
+                {
+                    Number(document.getElementById("txt").value+="2");
+                }
+                function three()
+                {
+                    Number(document.getElementById("txt").value+="3");
+                }
+                function four()
+                {
+                    Number(document.getElementById("txt").value+="4");
+                }
+                function five()
+                {
+                    Number(document.getElementById("txt").value+="5");
+                }
+                function six()
+                {
+                    Number(document.getElementById("txt").value+="6");
+                }
+                function seven()
+                {
+                    Number(document.getElementById("txt").value+="7");
+                }
+                function eight()
+                {
+                    Number(document.getElementById("txt").value+="8");
+                }
+                function nine()
+                {
+                    Number(document.getElementById("txt").value+="9");
+                }
+                function zero()
+                {
+                    Number(document.getElementById("txt").value+="0");
+                }
+                function add()
+                {
+                    document.getElementById("txt").value+="+";
+                }
+                function subtract()
+                {
+                    document.getElementById("txt").value+="-";
+                }
+                function multiply()
+                {
+                    document.getElementById("txt").value+="*";
+                }
+                function divide()
+                {
+                    document.getElementById("txt").value+="/";
+                }
+                function trash()
+                {
+                    document.getElementById("txt").value="";
+                }
+                function doit()
+                {
+                    var t1=document.getElementById("txt").value;
+                    var t2=eval(t1);
+                    document.getElementById("txt").value=t2;
+                }
+            </script>
+                <div class="col-sm-5"></div>
+            </div>
+        </div>
+    </body>
+</html>
